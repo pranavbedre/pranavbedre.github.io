@@ -2,6 +2,7 @@
 My personal website
 
 This is my very own personal website.
+
 Content 
 1. Home
 2. About me
