@@ -2,7 +2,7 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  /* scroll-behavior: smooth; */
 }
 
 .parallax {
@@ -143,7 +143,7 @@ span::selection {
 }
 
 #about h5 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   padding-bottom: 20px;
   font-weight: lighter;
 }
@@ -232,6 +232,27 @@ span::selection {
   background-color: khaki;
 }
 
+/* fixed arrow up position */
+
+#arrow {
+  position: fixed;
+  font-size: 2.5rem;
+  bottom: 1rem;
+  right: 1rem;
+  color: rgb(133, 133, 133);
+}
+
+.arrow-up {
+  color: inherit;
+  text-decoration: none;
+}
+
+.arrow-up:hover {
+  color: rgb(133, 133, 133);
+  text-decoration: none;
+}
+
+/* media queries for tablet sized devices */
 @media (max-width: 991px) {
   .content-container-padding-rule,
   #title .container-fluid {
@@ -263,6 +284,8 @@ span::selection {
     padding-left: 30px;
   }
 }
+
+/* media queries for phones */
 @media (max-width: 500px) {
   .content-container-padding-rule,
   #title .container-fluid {
@@ -284,5 +307,17 @@ span::selection {
 
   .ext-links-left-padding {
     padding-left: 30px;
+  }
+}
+
+/* media queries for small phones */
+@media (max-width: 450px) {
+  #about .about-img {
+    width: 300px;
+  }
+
+  #about .img-border {
+    width: 300px;
+    height: 325.5px;
   }
 }
