@@ -1,39 +1,35 @@
-// smooth scroll to required sections functionality
+// smooth scrolling functionality
+$("a").on("click", function (e) {
+  if (this.hash !== "") {
+    e.preventDefault();
 
-let aboutSection = document.querySelector(".about-link");
-let skillsSection = document.querySelector(".skills-link");
-let contactSection = document.querySelector("contact-link");
+    // let hash = this.hash;
 
-function smoothScroll(to, duration) {
-  let target = document.querySelector(to);
-  let targetPosition = target.getBoundingClientRect().top;
-  let startPosition = window.pageYOffset;
-  let distance = targetPosition - startPosition;
-  let starTime = null;
-
-  let animation = function (currentTime) {
-    if (starTime === null) startPosition = currentTime;
-    let timeElapsed = currentTime - starTime;
-    let run = ease(timeElapsed, startPosition, distance, duration);
-    window.scrollTo(0, run);
-    if (timeElapsed < duration) {
-      requestAnimationFrame(animation);
-    }
-  };
-
-  function ease(t, b, c, d) {
-    return (-c / 2) * (Math.cos((Math.PI * t) / d) - 1) + b;
+    $("html, body").animate(
+      {
+        scrollTop: $(this.hash).offset().top,
+      },
+      800,
+      function () {
+        window.location.hash = this.hash;
+      }
+    );
   }
-
-  requestAnimationFrame(animation);
-}
-
-// smooth scroll activators - from respective nav links
-// to 'my skills' section
-skillsSection.addEventListener("click", function () {
-  smoothScroll("#skills", 2000);
 });
-// to 'contact me' section
-contactSection.addEventListener("click", function () {
-  smoothScroll("#contact", 2000);
+
+// code to add arrow up icon to reach section1 when page is scrolled down by a little distance
+$(window).on("scroll", function () {
+  let scrollTop = $(window).scrollTop(), // calculate the distance b/w top of doc and top of scrollbar
+    elementOffset = $("#about").offset().top, // calculate distance b/w sec2 to top of doc
+    distance = elementOffset - scrollTop; // result is the ditance top of window and section2
+
+  console.log(scrollTop);
+  console.log(elementOffset);
+  console.log(distance);
+
+  if (distance <= 263) {
+    $(".arrow-up").fadeIn();
+  } else {
+    $(".arrow-up").fadeOut();
+  }
 });
