@@ -1,5 +1,4 @@
-# pranavbedre.github.io #
-My personal website
+# My personal website #
 
 This is my very own personal website.
 
