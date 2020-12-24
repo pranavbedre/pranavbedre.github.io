@@ -309,15 +309,3 @@ span::selection {
     padding-left: 30px;
   }
 }
-
-/* media queries for small phones */
-@media (max-width: 450px) {
-  #about .about-img {
-    width: 300px;
-  }
-
-  #about .img-border {
-    width: 300px;
-    height: 325.5px;
-  }
-}
