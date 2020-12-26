@@ -1,5 +1,5 @@
-// smooth scrolling functionality
 $("a").on("click", function (e) {
+  console.log("clicked");
   if (this.hash !== "") {
     e.preventDefault();
 
@@ -16,20 +16,26 @@ $("a").on("click", function (e) {
     );
   }
 });
-
 // code to add arrow up icon to reach section1 when page is scrolled down by a little distance
+let hideArrow = true;
 $(window).on("scroll", function () {
   let scrollTop = $(window).scrollTop(), // calculate the distance b/w top of doc and top of scrollbar
     elementOffset = $("#about").offset().top, // calculate distance b/w sec2 to top of doc
-    distance = elementOffset - scrollTop; // result is the ditance top of window and section2
+    distance = elementOffset - scrollTop; // result is the ditance b/w top of the window and section2
 
-  console.log(scrollTop);
-  console.log(elementOffset);
-  console.log(distance);
+  if (hideArrow) $("#arrow").fadeOut();
 
   if (distance <= 263) {
-    $(".arrow-up").fadeIn();
+    hideArrow = false;
+    $("#arrow").fadeIn();
+    $("#arrow").html(
+      `<a href="#title" class="fas fa-chevron-up arrow-up"></a>`
+    );
   } else {
     $(".arrow-up").fadeOut();
   }
+
+  $(".arrow-up").on("click", function () {
+    $("html, body").animate({ scrollTop: 0 }, 1000);
+  });
 });
