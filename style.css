@@ -333,7 +333,7 @@ footer#copyright p {
 @media (max-width: 500px) {
   .content-container-padding-rule,
   #title .container-fluid {
-    padding: 5rem 2rem;
+    padding: 5rem 1rem;
   }
 
   #title .container-fluid {
