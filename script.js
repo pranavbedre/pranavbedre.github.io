@@ -1,3 +1,4 @@
+// smooth scrolling functionality
 $("a").on("click", function (e) {
   console.log("clicked");
   if (this.hash !== "") {
@@ -16,7 +17,7 @@ $("a").on("click", function (e) {
     );
   }
 });
-// code to add arrow up icon to reach section1 when page is scrolled down by a little distance
+// code to add back-to-top icon to reach section1 when page is scrolled down by a little distance
 let hideArrow = true;
 $(window).on("scroll", function () {
   let scrollTop = $(window).scrollTop(), // calculate the distance b/w top of doc and top of scrollbar
@@ -36,6 +37,6 @@ $(window).on("scroll", function () {
   }
 
   $(".arrow-up").on("click", function () {
-    $("html, body").animate({ scrollTop: 0 }, 1000);
+    $("html, body").animate({ scrollTop: 0 }, 800);
   });
 });
