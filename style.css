@@ -221,7 +221,7 @@ span::selection {
 }
 
 .card-body:hover {
-  transform: scale(1.1);
+  transform: scale(1.04);
   background-color: rgb(111, 0, 255);
   color: white;
   border-radius: 10px;
@@ -346,7 +346,7 @@ footer#copyright p {
   }
 
   .card-body {
-    max-width: 500px;
+    max-width: 330px;
     margin: 0 auto 3rem;
   }
 
