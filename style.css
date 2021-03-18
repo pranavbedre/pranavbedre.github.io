@@ -6,7 +6,7 @@
 
 .parallax {
   background-image: url(./images/pexels-pixabay-257897-01.jpeg);
-  min-height: 800px;
+  min-height: 100vh;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
